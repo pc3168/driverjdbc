@@ -18,7 +18,6 @@ public class ConnectionFactory {
         Connection con = null;
         try{
             con = DriverManager.getConnection(connectionParameter.getUrl(), connectionParameter.getUsername(), connectionParameter.getPassword());
-            System.out.println("conectado com sucesso.");
         }catch( SQLException e){
             e.printStackTrace();
             throw new Exception("Não foi possível conectar com o banco de dados."+System.lineSeparator()+e.getMessage());
