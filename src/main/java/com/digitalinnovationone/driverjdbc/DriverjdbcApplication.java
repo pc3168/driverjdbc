@@ -13,16 +13,29 @@ public class DriverjdbcApplication {
 		SpringApplication.run(DriverjdbcApplication.class, args);
 
 
-		ConnectionParameter parameter = new ConnectionParameter();
-		parameter.setDriver("mysql");
-		parameter.setHost("localhost");
-		parameter.setDatabase("gerente");
-		parameter.setUsername("root");
-		parameter.setPassword("admin");
-		parameter.setPort("3307");
+		ConnectionParameter parameterMysql = new ConnectionParameter();
+		parameterMysql.setDriver("mysql");
+		parameterMysql.setHost("localhost");
+		parameterMysql.setDatabase("gerente");
+		parameterMysql.setUsername("root");
+		parameterMysql.setPassword("admin");
+		parameterMysql.setPort("3307");
 
-		ConnectionFactory connection = new ConnectionFactory(parameter);
-		connection.connection();
+		ConnectionFactory connectionMysql = new ConnectionFactory(parameterMysql);
+		connectionMysql.connection();
+
+		System.out.println("----------------------------------------------");
+
+		ConnectionParameter parameterPostgres = new ConnectionParameter();
+		parameterPostgres.setDriver("postgresql");
+		parameterPostgres.setHost("localhost");
+		parameterPostgres.setDatabase("curso");
+		parameterPostgres.setUsername("postgres");
+		parameterPostgres.setPassword("123456");
+		parameterPostgres.setPort("5433");
+
+		ConnectionFactory connectionPostgres = new ConnectionFactory(parameterPostgres);
+		connectionPostgres.connection();
 
 	}
 
